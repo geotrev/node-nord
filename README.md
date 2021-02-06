@@ -2,27 +2,29 @@
 
 A node client that connects to nordvpn through openvpn using [node-openvpn](https://github.com/luigiplr/node-openvpn).
 
-## Setup
+## Setup & Usage
 
-First, clone this repo.
+Clone this repo.
 
 ```sh
 $ git clone https://github.com/geotrev/node-nord.git
 ```
 
-Then install dependencies.
+Install dependencies.
 
 ```sh
 $ npm i
 ```
 
-Since you'll be using nordvpn, you need to create credentials. Create a new local file called `.auth`. It will be hidden from git via `.gitignore` by default; DO NOT commit this file if you fork this repo (unless the repo is private, I guess).
+Add your nordvpn credentials.
 
 ```sh
 $ touch .auth
 $ echo "<YOUR_NORDVPN_EMAIL>" >> .auth
 $ echo "<YOUR_NORDVPN_PASSWORD>" >> .auth
 ```
+
+_NOTE: This file will be hidden via `.gitignore`; DO NOT commit this file if you fork this repo (unless the repo is private, I guess)._
 
 Finally, run the vpn.
 
@@ -46,16 +48,6 @@ Configures the target country you'll use when connecting to nordvpn's servers.
 
 _NOTE: I'll probably add an option in the future to set a custom default country._
 
-### --randomize
-
-Alias: `-r`
-
-Default: `false`
-
-Usage: `npm start -- --randomize` or `npm start -- -r`
-
-Will randomize the nordvpn server you're given. 
-
 ### --protocol
 
 Alias: `-p`
@@ -66,3 +58,12 @@ Usage: `npm start -- --protocol tcp` or `npm start -- -p tcp`
 
 Configures which protocol to use when connecting.
 
+### --randomize
+
+Alias: `-r`
+
+Default: `false`
+
+Usage: `npm start -- --randomize` or `npm start -- -r`
+
+Will randomize the nordvpn server you're given. 
